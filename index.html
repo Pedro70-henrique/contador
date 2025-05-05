@@ -3,41 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-    <title>contador</title>
+    <title>Contador</title>
+    <style>
+        head {
+        box-sizing: border-box;
+        align-items: center;
+        }
+
+        body {
+            align-items: center;
+            border-radius: 100vh;
+            justify-content: center;
+            display: flex;
+            height: 100vh;
+            background-color: black;
+        }
+        section {
+            text-align: center;
+            border-radius: 12px;
+            background-color:  black;
+            padding: 12px;
+            border: 5px solid blue;
+        }
+        p {
+            
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        button {
+            color: steelblue;
+           padding: 218x;
+           font-size: 23px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Contador</h1>
-        <p id="resultado"></p>
+    <section>
+        <h2>Contador</h2>
+
+        <p id="numero1">0</p><h1>-------------</h1> <p id="numero2">0</p>
+        
+       
+        <button id="blue" onclick="aumentar()">+1</button>
             
-        <section>
-        <button onclick="Reset()">Reset</button>
-        <button onclick="Diminuir()">Menos</button>
-        <button onclick="Aumentar()">Mais</button>
-        <section>
+        <button onclick="diminuir()">-1</button>
+    </section>
+    <div>
+    <script>
+
+        let numero = 0;
+
+        function aumentar() {
+            numero = numero + 1
+            mostrarNaTela()
+        }
+        function diminuir() {
+            numero = numero - 1
+            mostrarNaTela()
+        }
+
+        function mostrarNaTela() {
+            const p1 = document.querySelector("#numero1")
+            const p2 = document.querySelector("#numero2")
+            p1.innerText = numero
+            p2.innerText = numero
+        }
+
+        mostrarNaTela()
+    </script>
     </div>
-<script>
-    let numero = 0
-
-    function Reset () {
-        numero = numero - numero
-        MostrarNaTela()
-    }
-    function Diminuir() {
-        numero = numero -1
-        MostrarNaTela()
-    }
-    function Aumentar () {
-        numero = numero +1
-        MostrarNaTela()
-    }
-    function MostrarNaTela () {
-        const p = document.querySelector("#resultado")
-        p.innerText = numero
-
-    }
-    MostrarNaTela()
-</script>
 </body>
 </html>
